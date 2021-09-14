@@ -1,8 +1,13 @@
 import contactsOperations from "./index.js";
 
 const listContacts = async () => {
-    const contacts = await contactsOperations.getAllContacts();
-    console.table(contacts);
+    try {
+        const contacts = await contactsOperations.getAllContacts();
+        console.table(contacts);
+    }
+    catch (error) {
+    console.log(error);
+  }
 };
 
 export default listContacts;
